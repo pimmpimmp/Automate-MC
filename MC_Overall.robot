@@ -12,7 +12,7 @@ Resource    Database/database.robot
 *** Test cases ***
 User Earner login
     Open MC web
-    login Pimm
+    login Earner
 
 User Earner Apply
     Search for apply MC
