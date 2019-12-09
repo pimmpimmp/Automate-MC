@@ -15,7 +15,7 @@ ${DBPort}         3306
 
 
 *** Keywords ***
-Connect2
+ConnectDB
     Connect To Database Using Custom Params    pymysql    user='${DBUser}', password='${DBPass}', host='${DBHost}', port=${DBPort}
 QueryDB
     ${queryResults}    Query    SELECT * FROM application.Mcapp where userId = (select uId from user.Userlb where email = 'jarinya.pimm2@gmail.com');
