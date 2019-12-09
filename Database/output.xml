@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.5 on win32)" generated="20191206 10:16:51.610" rpa="false">
+<suite id="s1" name="Database" source="C:\Users\PF1PJ9VB\Desktop\MC\Database\database.robot">
+<test id="s1-t1" name="Connect2">
+<kw name="Connect To Database Using Custom Params" library="DatabaseLibrary">
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using the map string `db_custom_param_string`.</doc>
+<arguments>
+<arg>pymysql</arg>
+<arg>user='${DBUser}', password='${DBPass}', host='${DBHost}', port=${DBPort}</arg>
+</arguments>
+<msg timestamp="20191206 10:16:51.807" level="INFO">Executing : Connect To Database Using Custom Params : pymysql.connect(db_api_2.connect(user='admin', password='2XzffjMJC7ZW', host='mc-develop-services.chnqcpnomaqb.ap-southeast-1.rds.amazonaws.com', port=3306)) </msg>
+<status status="PASS" starttime="20191206 10:16:51.792" endtime="20191206 10:16:52.013"></status>
+</kw>
+<status status="PASS" starttime="20191206 10:16:51.792" endtime="20191206 10:16:52.014" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Query">
+<kw name="Query">
+<arguments>
+<arg>SELECT * FROM application.Mcapp where userId = (select uId from user.Userlb where email = 'jarinya.pimm2@gmail.com');</arg>
+</arguments>
+<assign>
+<var>${queryResults}</var>
+</assign>
+<msg timestamp="20191206 10:16:52.018" level="FAIL">Keyword 'Query' expected 0 arguments, got 1.</msg>
+<status status="FAIL" starttime="20191206 10:16:52.018" endtime="20191206 10:16:52.019"></status>
+</kw>
+<status status="FAIL" starttime="20191206 10:16:52.016" endtime="20191206 10:16:52.019" critical="yes">Keyword 'Query' expected 0 arguments, got 1.</status>
+</test>
+<status status="FAIL" starttime="20191206 10:16:51.612" endtime="20191206 10:16:52.021"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="Database">Database</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
