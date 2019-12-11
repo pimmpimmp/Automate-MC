@@ -24,9 +24,9 @@ User Earner Check Apply
     Check Card Apply
     Go Homepage
 
-User Earner Submit
+# User Earner Submit
 
-User Earner Logout
+# User Earner Logout
 
 Call database
     ConnectDB
