@@ -12,7 +12,8 @@ Resource    Database/database.robot
 *** Test cases ***
 User Earner login
     Open MC web
-    login Earner
+    #login Earner
+    login Pimm
 
 User Earner Apply
     Search for apply MC
@@ -24,12 +25,17 @@ User Earner Check Apply
     Check Card Apply
     Go Homepage
 
-# User Earner Submit
+User Earner Submit
+    Go Applied MC
+    Go to card
+    Select tab MC
+    Submit MC
 
 # User Earner Logout
+#     Logout
 
-Call database
-    ConnectDB
-    Delete DB
+# Call database
+#     ConnectDB
+#     Delete DB
 Wait
     Sleep                       5

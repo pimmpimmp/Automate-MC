@@ -2,8 +2,7 @@
 Library    Selenium2Library
 Library           DatabaseLibrary
 Library           OperatingSystem
-# Suite Setup       Connect To Database    pymysql    ${DBName}    ${DBUser}    ${DBPass}    ${DBHost}    ${DBPort}
-# Suite Teardown    Disconnect From Database
+
 
 
 *** Variables ***
@@ -17,11 +16,9 @@ ${DBPort}         3306
 *** Keywords ***
 ConnectDB
     Connect To Database Using Custom Params    pymysql    user='${DBUser}', password='${DBPass}', host='${DBHost}', port=${DBPort}
-QueryDB
-    ${queryResults}    Query    SELECT * FROM application.Mcapp where userId = (select uId from user.Userlb where email = 'jarinya.pimm2@gmail.com');
-    Log Many    @{queryResults}
 Delete DB
-    Execute Sql Script                      ${CURDIR}/delete.sql
+    # Execute Sql Script                      ${CURDIR}/delete.sql
+    Execute Sql Script                      ${CURDIR}/delete_pimm.sql
 
 # *** Test Cases ***
 # # Connect

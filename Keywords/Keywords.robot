@@ -208,13 +208,12 @@ Add Detail MC
 
 Select tab MC
     Sleep                                               1
-    Click Element                                       //h4[contains(text(),"Automate Test")]
     Wait Until Page Contains                            Constructive Course Design
-    Click Element                                       //span[contains(text(),"Reviewer")]
+    Click Element                                       //span[contains(text(),"Learning Units")]
     Click Element                                       //span[contains(text(),"Overview")]
     Click Element                                       //span[contains(text(),"Submission & Evaluation")]
     Click Element                                       //span[contains(text(),"Details")]
-    Click Element                                       //span[contains(text(),"Learning unit/Learning resources")]
+
 
 Search for apply MC
     Input Text                                          inputSearchMC                                                   Constructive Course Design
@@ -226,37 +225,37 @@ Search for apply MC
     Sleep                                               2
 
 Submit MC
-# Go card
-    sleep                                               2
-    Click Element                                       //h4[contains(text(),"Automate Test")]
-    Wait Until Page Contains                            Constructive Course Design
 # Try to Click
-    sleep                                               2
-    Click Element                                       //div[div[a[contains(text(),"Learning Unit 1")]]]//div[contains(text(),"Show Learning Unit")]
-    Wait Until Page Contains                            Hide Learning Unit
-    Click Element                                       //div[div[a[contains(text(),"Learning Unit 1")]]]//p[contains(text(),"Hide Learning Unit")]
-    Click Element                                       //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//p[contains(text(),"Show Learning Unit")]
+    # sleep                                               2
+    # Click Element                                       //div[div[a[contains(text(),"Learning Unit 1")]]]//div[contains(text(),"Show Learning Unit")]
     # Wait Until Page Contains                            Hide Learning Unit
-    Click Element                                       //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//p[contains(text(),"Hide Learning Unit")]
-    Click Element                                       //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//p[contains(text(),"Assessment Rubric")]
-    Sleep                                               1
-    Click Element                                       //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//p[contains(text(),"Assessment Rubric")]
+    # Click Element                                       //div[div[a[contains(text(),"Learning Unit 1")]]]//p[contains(text(),"Hide Learning Unit")]
+    # Click Element                                       //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//p[contains(text(),"Show Learning Unit")]
+    # # Wait Until Page Contains                            Hide Learning Unit
+    # Click Element                                       //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//p[contains(text(),"Hide Learning Unit")]
+    # Click Element                                       //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//p[contains(text(),"Assessment Rubric")]
+    # Sleep                                               1
+    # Click Element                                       //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//p[contains(text(),"Assessment Rubric")]
 # Answer
-    ${ans}                                              getFile                                                                 ${CURDIR}/file/answer.txt    encoding=UTF-8
-    Input Text                                          //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//textarea[@id="textarea-description"]                                  ${ans}
+    ${ans}                                              getFile                                                                 ${Text_ans}                                                           encoding=UTF-8
+    Input Text                                          //div[div[a[contains(text(),"Provide profile of anticipated learners as followed:")]]]//textarea[@id="textarea-description"]                                  ${ans}
     sleep                                               2
-    Choose File                                         //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//input[@type="file"]                                                                ${img}
+    Choose File                                         //input[@type="file"][1]                                                                ${img}
     sleep                                               1
-    Choose File                                         //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//input[@type="file"]                                                                ${doc}
+    Choose File                                         //input[@type="file"][1]                                                                ${img2}
+    sleep                                               1
+    Choose File                                         //input[@type="file"][1]                                                                ${doc}
     sleep                                               2
-    Choose File                                         //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//input[@type="file"]                                                                ${excel}
+    Choose File                                         //input[@type="file"][1]                                                                ${excel}
     sleep                                               2
-    Choose File                                         //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//input[@type="file"]                                                                ${pdf}
+    Choose File                                         //input[@type="file"][1]                                                                ${pdf}
     sleep                                               2
-    Choose File                                         //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//input[@type="file"]                                                                ${ppt}
+    Choose File                                         //input[@type="file"][1]                                                                ${ppt}
     sleep                                               2
-    Choose File                                         //div[div[a[contains(text(),"คำถามข้อที่ 1")]]]//input[@type="file"]                                                                ${vdo}
+    Choose File                                         //input[@type="file"][1]                                                                ${vdo}
     sleep                                               3
+
+    # Click Element                                       //a[contains(text(),"Submit Application")]
 
 Tag
 
