@@ -12,19 +12,24 @@ ${DBUser}         admin
 ${DBPass}         2XzffjMJC7ZW
 ${DBPort}         3306
 
+${DBHost_test}         10.26.11.90
+${DBName_test}         application
+${DBUser_test}         root
+${DBPass_test}         1234
+${DBPort_test}         33066
+
 
 *** Keywords ***
 ConnectDB
     Connect To Database Using Custom Params    pymysql    user='${DBUser}', password='${DBPass}', host='${DBHost}', port=${DBPort}
+ConnectDB_test
+    Connect To Database Using Custom Params    pymysql    user='${DBUser_test}', password='${DBPass_test}', host='${DBHost_test}', port=${DBPort_test}
 Delete DB
     # Execute Sql Script                      ${CURDIR}/delete.sql
-    Execute Sql Script                      ${CURDIR}/delete_pimm.sql
+    # Execute Sql Script                      ${CURDIR}/delete_pimm.sql
+    Execute Sql Script                      ${CURDIR}/dl_pimm_test.sql
 
-# *** Test Cases ***
-# # Connect
-# #     Connect To Database         pymysql    ${DBName}    ${DBUser}    ${DBPass}    ${DBHost}    ${DBPort}
-# Connect2
-#     Connect To Database Using Custom Params    pymysql    user='${DBUser}', password='${DBPass}', host='${DBHost}', port=${DBPort}
-# Query
-#     ${queryResults}    Query    SELECT * FROM application.Mcapp where userId = (select uId from user.Userlb where email = 'jarinya.pimm2@gmail.com');
-#     Log Many    @{queryResults}
+*** Test Cases ***
+Connect
+    ConnectDB_test
+    Delete DB

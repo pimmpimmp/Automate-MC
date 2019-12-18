@@ -254,9 +254,5 @@ Submit MC
     sleep                                               2
     Choose File                                         //input[@type="file"][1]                                                                ${vdo}
     sleep                                               3
-
+    Click Element                                       //div[span[contains(text(),"TestPic2.jpg")]]//i[@class="dz-file-preview__delete icon icon-close"]
     # Click Element                                       //a[contains(text(),"Submit Application")]
-
-Tag
-
-Category
