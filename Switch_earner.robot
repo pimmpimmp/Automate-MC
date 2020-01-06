@@ -12,8 +12,10 @@ Resource    Database/database.robot
 ${BROWSER}                      chrome
 ${MC_web}                       https://www.4lifelonglearning.org/
 ${MC_Main_Web}                  https://app.4lifelonglearning.org/en
+${MC_test}                      https://d-app.4lifelonglearning.org/en/
+${MC_test_dashboard}                      https://d-app.4lifelonglearning.org/en/reviewer/dashboard
 ${MC_test_server}               http://10.26.11.90:10001/en
-${MC_test_dashboard}            http://10.26.11.90:10001/en/reviewer/dashboard
+${MC_test_server_dashboard}            http://10.26.11.90:10001/en/reviewer/dashboard
 ${Email_Earner_Pimm}                jarinya.pimm@gmail.com
 ${Pass_Earner_Pimm}                 Pimm1806
 ${Email_Earner_Pimm2}                jarinya.pimm2@gmail.com
@@ -31,7 +33,7 @@ ${MC_test1}                         MC TEST 1
 
 *** Keywords ***
 Open MC web
-    Open BROWSER                                        ${MC_test_server}                                                             ${BROWSER}
+    Open BROWSER                                        ${MC_test}                                                             ${BROWSER}
     Maximize Browser Window
 
 User1 login
@@ -112,7 +114,8 @@ switch to user 2
 
 
 check task1 user2
-    Click Element                                       //button[contains(text(),"Not Pass")]
+    Wait Until Element Is Enabled                       //span[contains(text(),"Not yet pass")]
+    Click Element                                       //span[contains(text(),"Not yet pass")]
 
 switch back to user1 check task1 data collect
     Click Button                                        //button[contains(text(),"Earner list")]
