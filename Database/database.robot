@@ -6,11 +6,17 @@ Library           OperatingSystem
 
 
 *** Variables ***
-${DBHost}         mc-develop-services.chnqcpnomaqb.ap-southeast-1.rds.amazonaws.com
+${DBHost}         mc-production-services.chnqcpnomaqb.ap-southeast-1.rds.amazonaws.com
 ${DBName}         application
 ${DBUser}         admin
-${DBPass}         2XzffjMJC7ZW
+${DBPass}         12345678
 ${DBPort}         3306
+
+# ${DBHost}         mc-develop-services.chnqcpnomaqb.ap-southeast-1.rds.amazonaws.com
+# ${DBName}         application
+# ${DBUser}         admin
+# ${DBPass}         2XzffjMJC7ZW
+# ${DBPort}         3306
 
 ${DBHost_test}         10.26.11.90
 ${DBName_test}         application
@@ -26,8 +32,8 @@ ConnectDB_test
     Connect To Database Using Custom Params    pymysql    user='${DBUser_test}', password='${DBPass_test}', host='${DBHost_test}', port=${DBPort_test}
 Delete DB
     # Execute Sql Script                      ${CURDIR}/delete.sql
-    # Execute Sql Script                      ${CURDIR}/delete_pimm.sql
-    Execute Sql Script                      ${CURDIR}/dl_pimm_test.sql
+    Execute Sql Script                      ${CURDIR}/delete_pimm.sql
+    # Execute Sql Script                      ${CURDIR}/dl_pimm_test.sql
 
 *** Test Cases ***
 Connect

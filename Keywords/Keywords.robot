@@ -6,9 +6,14 @@ Resource    Variables.robot
 Open MC web
     Open BROWSER                                        ${MC_web}                                                               ${BROWSER}
     Maximize Browser Window
+    Wait Until Page Contains                            Competency-based learning
+
+Open MC d-app web
+    Open BROWSER                                        ${MC_d-app}                                                               ${BROWSER}
+    Maximize Browser Window
+    Wait Until Page Contains                            Learn, Grow, Become
 
 Register1
-    Wait Until Page Contains                            Learn. Build. Success.
     Click Element                                       //a[contains(text(),"Sign up")]
     Wait Until Page Contains                            Have an account?
     Input Text                                          input-firstname                                                 pimm
@@ -22,7 +27,6 @@ Register1
 
 
 login Earner
-    Wait Until Page Contains                            Competency-based learning
     Click Element                                       //a[contains(text(),"Sign in")]
     Wait Until Page Contains                            Don't have an account?
     Input Text                                          input-email                                                     ${User_Earner}
@@ -31,7 +35,6 @@ login Earner
     Wait Until Page Contains                            Learn, Grow, Become
 
 login Pimm
-    Wait Until Page Contains                            Competency-based learning
     Click Element                                       //a[contains(text(),"Sign in")]
     Wait Until Page Contains                            Don't have an account?
     Input Text                                          input-email                                                     ${Email_Earner_Pimm}

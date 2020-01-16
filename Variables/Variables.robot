@@ -6,10 +6,13 @@ ${BROWSER}              	  	chrome
 ${MC_web}              		 	https://www.4lifelonglearning.org/
 ${MC_Main_Web}					https://app.4lifelonglearning.org/en
 ${MC_test_server}               http://10.26.11.90:10001/en
+${MC_d-app}                     https://d-app.4lifelonglearning.org/en/
+
 ${Email_Earner_Pimm}              	jarinya.pimm2@gmail.com
 ${Pass_Earner_Pimm}               	Pimm1806
-${User_Earner}					earner.mc@gmail.com
+${User_Earner}					    earner.mc@gmail.com
 ${Pass_Earner}					123456789
+
 ${img}              ${CURDIR}/file/TestPic1.jpeg
 ${img2}             ${CURDIR}/file/TestPic2.jpg
 ${Text_ans}         ${CURDIR}/file/answer.txt

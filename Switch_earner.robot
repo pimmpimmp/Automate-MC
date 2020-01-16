@@ -16,24 +16,26 @@ ${MC_test}                      https://d-app.4lifelonglearning.org/en/
 ${MC_test_dashboard}                      https://d-app.4lifelonglearning.org/en/reviewer/dashboard
 ${MC_test_server}               http://10.26.11.90:10001/en
 ${MC_test_server_dashboard}            http://10.26.11.90:10001/en/reviewer/dashboard
-${Email_Earner_Pimm}                jarinya.pimm@gmail.com
-${Pass_Earner_Pimm}                 Pimm1806
-${Email_Earner_Pimm2}                jarinya.pimm2@gmail.com
-${Pass_Earner_Pimm2}                 Pimm1806
-${Email_test_01}                    test_user01@testmc.com
-${Email_test_02}                    test_user02@testmc.com
-${Pass_test}                        test1234
-${User_Earner}                  earner.mc@gmail.com
-${Pass_Earner}                  123456789
-${User_Reviewer1}                  reviewer1.mc@gmail.com
-${User_Reviewer2}                  reviewer2.mc@gmail.com
-${Pass_Reviewer}                  123456789
-${MC_test1}                         MC TEST 1
+
+${Email_Earner_Pimm}                    jarinya.pimm@gmail.com
+${Pass_Earner_Pimm}                     Pimm1806
+${Email_Earner_Pimm2}                   jarinya.pimm2@gmail.com
+${Pass_Earner_Pimm2}                    Pimm1806
+${Email_test_01}                        test_user01@testmc.com
+${Email_test_02}                        test_user02@testmc.com
+${Pass_test}                            test1234
+${User_Earner}                          earner.mc@gmail.com
+${Pass_Earner}                          123456789
+${User_Reviewer1}                       reviewer1.mc@gmail.com
+${User_Reviewer2}                       reviewer2.mc@gmail.com
+${Pass_Reviewer}                        123456789
+
+${MC_test1}                             MC TEST 1
 
 
 *** Keywords ***
 Open MC web
-    Open BROWSER                                        ${MC_test}                                                             ${BROWSER}
+    Open BROWSER                                        ${MC_test_server}                                                             ${BROWSER}
     Maximize Browser Window
 
 User1 login
@@ -90,7 +92,7 @@ login Reviewer
     Wait Until Page Contains                            Learn, Grow, Become
 
 Go to dashbaord
-    go to                                               ${MC_test_dashboard}
+    go to                                               ${MC_test_server_dashboard}
     Wait Until Page Contains                            MC TEST 1
 
 Go To card Test 1
